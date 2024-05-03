@@ -47,7 +47,13 @@ You can customize the plugin's behavior through several configuration options. T
   ```vim
   let g:daily_folder = 'Daily'
   ```
+  
+- **Date Format**: Set the formatting of the date `g:date_format` option. This is optional, by default the formatting is '%Y-%m-%d' corresponding to 'YYYY-MM-DD'.
 
+  ```vim
+  let g:date_format = '%Y-%m-%d'
+  ```
+  
 - **Use Daily Folder**: By default, the plugin uses the first vault found in your Obsidian `preferences.json` and creates a 'Daily' folder inside it. To change this behavior, set the `g:use_daily_folder` option to `0`. This will make the plugin use the vault root or the path specified in `g:vault_path`.
 
   ```vim

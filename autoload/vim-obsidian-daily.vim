@@ -16,6 +16,8 @@
 "
 " g:use_daily_folder = 1 use the above folder instead of direct path
 "
+" g:date_format = '%Y-%m-%d' format for the date, default YYYY-MM-DD
+"
 " g:use_wsl = 0 put this to 1 if you are running vim on wsl on windows
 "
 " Made by kuvaus
@@ -81,7 +83,7 @@ endfunction
 
 function GetFullPathToNote()
     " Get the current date in YYYY-MM-DD format and trim the newline character
-    let current_date = strftime('%Y-%m-%d')
+    let current_date = strftime(g:date_format)
 
     " Attempt to find the Obsidian directory path from obsidian.json
     let obsidian_directory = ReadObsidianJson()
