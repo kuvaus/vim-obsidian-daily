@@ -17,7 +17,7 @@ After adding the plugin, open Vim and execute the following commands:
 :PluginInstall
 ```
 
-Alternatively you can source the plugin as one file:
+Alternatively, you can source the plugin as one file:
 ```vim
 :source /path/to/vim-obsidian-daily/vim-obsidian-daily.vim
 ```
