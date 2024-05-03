@@ -16,6 +16,8 @@
 "
 " g:use_daily_folder = 1 use the above folder instead of direct path
 "
+" g:date_format = '%Y-%m-%d' format for the date, default YYYY-MM-DD
+"
 " g:use_wsl = 0 put this to 1 if you are running vim on wsl on windows
 "
 " Made by kuvaus
@@ -26,6 +28,7 @@
 " Options
 let g:vault_path = ''
 let g:daily_folder = 'Daily'
+let g:date_format = '%Y-%m-%d'
 let g:use_daily_folder = 1
 let g:use_wsl = 0
 

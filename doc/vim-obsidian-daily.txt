@@ -14,6 +14,8 @@ g:vault_path = path for your obsidian vault (optional)
 
 g:daily_folder = 'Daily' path for the daily notes inside the vault
 
+g:date_format = '%Y-%m-%d' format for the date, default YYYY-MM-DD
+
 g:use_daily_folder = 1 use the above folder instead of direct path
 
 g:use_wsl = 0 put this to 1 if you are running vim on wsl on windows
