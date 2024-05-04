@@ -20,16 +20,6 @@
 "
 " g:use_wsl = 0 put this to 1 if you are running vim on wsl on windows
 "
-"
-" Usage
-"
-" command Dailynote       create and open a new note
-"
-" command Dailynotebuffer create and open daily note on buffer
-"
-" command Removenote      remove note from the disk
-"
-"
 " Made by kuvaus
 "
 
@@ -189,11 +179,13 @@ function CreateObsidianNoteBuffer()
         if bufname ==# 'nofile'
             execute 'setlocal buftype='. full_path
         else
+        " If the file doesn't exist, create a new buffer
+        enew
         " Set the buffer name to the full path of the note
             execute 'file ' . full_path
         endif
         " Move the cursor to the beginning of the buffer
-        "normal gg
+        normal gg
     endif
 endfunction
 
@@ -211,4 +203,5 @@ function RemoveDailyNote()
     echo "Removed Daily Note at: ".. full_path
 
 endfunction
+
 

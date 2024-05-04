@@ -196,11 +196,13 @@ function CreateObsidianNoteBuffer()
         if bufname ==# 'nofile'
             execute 'setlocal buftype='. full_path
         else
+        " If the file doesn't exist, create a new buffer
+        enew
         " Set the buffer name to the full path of the note
             execute 'file ' . full_path
         endif
         " Move the cursor to the beginning of the buffer
-        "normal gg
+        normal gg
     endif
 endfunction
 
