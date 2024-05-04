@@ -20,6 +20,15 @@ g:use_daily_folder = 1 use the above folder instead of direct path
 
 g:use_wsl = 0 put this to 1 if you are running vim on wsl on windows
 
-Made by kuvaus
 
+Usage
+
+command Dailynote    create/open daily note on buffer (default)
+
+command Dailynotenew create/open daily note on disk
+
+command Removenote   remove note from the disk
+
+
+Made by kuvaus
 

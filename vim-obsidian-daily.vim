@@ -20,6 +20,16 @@
 "
 " g:use_wsl = 0 put this to 1 if you are running vim on wsl on windows
 "
+"
+" Usage
+"
+" command Dailynote    create/open daily note on buffer (default)
+"
+" command Dailynotenew create/open daily note on disk
+"
+" command Removenote   remove note from the disk
+"
+"
 " Made by kuvaus
 "
 
@@ -170,6 +180,30 @@ function CreateObsidianNote()
         echo "Error opening file: ".. v:errmsg
     endtry
 endfunction
+
+
+function CreateObsidianNoteBuffered()
+    let full_path = GetFullPathToNote()
+    echo "Daily Note file path: ".. full_path
+    
+    " Check if the file exists
+    if filereadable(full_path)
+        " If the file exists, open it
+        execute 'edit ' . full_path
+    else
+        " If the buffer has not been named change the buffer name
+        let bufname = getbufvar('%', 'buftype')
+        if bufname ==# 'nofile'
+            execute 'setlocal buftype='. full_path
+        else
+        " Set the buffer name to the full path of the note
+            execute 'file ' . full_path
+        endif
+        " Move the cursor to the beginning of the buffer
+        "normal gg
+    endif
+endfunction
+
 
 function RemoveDailyNote()
     let full_path = GetFullPathToNote()
