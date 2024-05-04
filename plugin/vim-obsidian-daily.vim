@@ -20,6 +20,16 @@
 "
 " g:use_wsl = 0 put this to 1 if you are running vim on wsl on windows
 "
+"
+" Usage
+"
+" command Dailynote       create and open a new note
+"
+" command Dailynotebuffer create and open daily note on buffer
+"
+" command Removenote      remove note from the disk
+"
+"
 " Made by kuvaus
 "
 
@@ -33,8 +43,9 @@ let g:use_daily_folder = 1
 let g:use_wsl = 0
 
 " Define commands
-command Dailynote call CreateObsidianNote()
-command Removenote call RemoveDailyNote()
+command Dailynote       call CreateObsidianNote()
+command Dailynotebuffer call CreateObsidianNoteBuffer()
+command Removenote      call RemoveDailyNote()
 
 
 runtime autoload/vim-obsidian-daily.vim

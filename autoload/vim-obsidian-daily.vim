@@ -164,6 +164,32 @@ function CreateObsidianNote()
     endtry
 endfunction
 
+
+function CreateObsidianNoteBuffer()
+    let full_path = GetFullPathToNote()
+    echo "Daily Note file path: ".. full_path
+    
+    " Check if the file exists
+    if filereadable(full_path)
+        " If the file exists, open it
+        execute 'edit ' . full_path
+    else
+        " If the buffer has not been named change the buffer name
+        let bufname = getbufvar('%', 'buftype')
+        if bufname ==# 'nofile'
+            execute 'setlocal buftype='. full_path
+        else
+        " If the file doesn't exist, create a new buffer
+        enew
+        " Set the buffer name to the full path of the note
+            execute 'file ' . full_path
+        endif
+        " Move the cursor to the beginning of the buffer
+        normal gg
+    endif
+endfunction
+
+
 function RemoveDailyNote()
     let full_path = GetFullPathToNote()
     
@@ -177,4 +203,5 @@ function RemoveDailyNote()
     echo "Removed Daily Note at: ".. full_path
 
 endfunction
+
 

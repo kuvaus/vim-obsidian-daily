@@ -32,6 +32,14 @@ To create a new daily note, use the `:Dailynote` command in Vim.
 
 To delete today's note, use the `:Removenote` command in Vim.
 
+### Creating a New Daily Note on Buffer
+
+To create a new daily note on buffer, use the `:Dailynotebuffer` command in Vim.
+
+The difference here is that the note is in buffer and the file is created upon saving the note.
+
+The default command `:Dailynote` creates the file automatically on disk with the command. 
+
 ### Configuration Options
 
 You can customize the plugin's behavior through several configuration options. These can be set in your `.vimrc` file or directly within Vim.
@@ -47,24 +55,24 @@ You can customize the plugin's behavior through several configuration options. T
   ```vim
   let g:daily_folder = 'Daily'
   ```
-  
+
 - **Date Format**: Set the formatting of the date `g:date_format` option. This is optional, by default the formatting is '%Y-%m-%d' corresponding to 'YYYY-MM-DD'.
 
   ```vim
   let g:date_format = '%Y-%m-%d'
   ```
-  
+
 - **Use Daily Folder**: By default, the plugin uses the first vault found in your Obsidian `preferences.json` and creates a 'Daily' folder inside it. To change this behavior, set the `g:use_daily_folder` option to `0`. This will make the plugin use the vault root or the path specified in `g:vault_path`.
 
   ```vim
   let g:use_daily_folder = 1
   ```
-  
+
 - **Use WSL**: Set this to 1 if you are running VIM on WSL under Windows. It is needed for setting file paths correctly. Set it to 0 otherwise. By default it is set to 0.
 
   ```vim
   let g:use_wsl = 0
-  ``` 
+  ```
 
 ### Default Behavior
 
