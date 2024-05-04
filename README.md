@@ -32,13 +32,13 @@ To create a new daily note, use the `:Dailynote` command in Vim.
 
 To delete today's note, use the `:Removenote` command in Vim.
 
-### Creating a New Daily Note on Disk (not on Buffer)
+### Creating a New Daily Note on Buffer
 
-To create a new daily note on disk, use the `:Dailynotenew` command in Vim.
+To create a new daily note on buffer, use the `:Dailynotebuffer` command in Vim.
 
-The difference here is that the file is created automatically on disk with the command.
+The difference here is that the note is in buffer and the file is created upon saving the note.
 
-The default command `:Dailynote` creates the file upon saving the note.
+The default command `:Dailynote` creates the file automatically on disk with the command. 
 
 ### Configuration Options
 
