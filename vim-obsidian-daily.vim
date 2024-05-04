@@ -23,11 +23,11 @@
 "
 " Usage
 "
-" command Dailynote    create/open daily note on buffer (default)
+" command Dailynote       create and open a new note
 "
-" command Dailynotenew create/open daily note on disk
+" command Dailynotebuffer create and open daily note on buffer
 "
-" command Removenote   remove note from the disk
+" command Removenote      remove note from the disk
 "
 "
 " Made by kuvaus
@@ -182,7 +182,7 @@ function CreateObsidianNote()
 endfunction
 
 
-function CreateObsidianNoteBuffered()
+function CreateObsidianNoteBuffer()
     let full_path = GetFullPathToNote()
     echo "Daily Note file path: ".. full_path
     
@@ -226,3 +226,5 @@ command Dailynote :call CreateObsidianNote()
 " Command to remove the daily note
 command Removenote :call RemoveDailyNote()
 
+" Command to create and open a new note on buffer
+command Dailynotebuffer call CreateObsidianNoteBuffer()

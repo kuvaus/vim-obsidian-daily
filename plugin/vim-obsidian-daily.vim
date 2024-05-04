@@ -23,11 +23,11 @@
 "
 " Usage
 "
-" command Dailynote    create/open daily note on buffer (default)
+" command Dailynote       create and open a new note
 "
-" command Dailynotenew create/open daily note on disk
+" command Dailynotebuffer create and open daily note on buffer
 "
-" command Removenote   remove note from the disk
+" command Removenote      remove note from the disk
 "
 "
 " Made by kuvaus
@@ -43,9 +43,9 @@ let g:use_daily_folder = 1
 let g:use_wsl = 0
 
 " Define commands
-command Dailynote    call CreateObsidianNoteBuffered()
-command Dailynotenew call CreateObsidianNote()
-command Removenote   call RemoveDailyNote()
+command Dailynote       call CreateObsidianNote()
+command Dailynotebuffer call CreateObsidianNoteBuffer()
+command Removenote      call RemoveDailyNote()
 
 
 runtime autoload/vim-obsidian-daily.vim
